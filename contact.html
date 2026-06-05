@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zoe Francis | Contact</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -145,6 +146,41 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+  emailjs.init('2uN2Or3pENc2FpTu_');
+
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const btn = this.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    const templateParams = {
+      from_name: document.getElementById('name').value,
+      from_email: document.getElementById('email').value,
+      subject: document.getElementById('subject').value,
+      message: document.getElementById('message').value,
+    };
+
+    emailjs.send('service_31glrki', 'template_iczcvr6', templateParams)
+      .then(() => {
+        btn.textContent = 'Message Sent! ✅';
+        btn.style.background = '#25d366';
+        this.reset();
+        setTimeout(() => {
+          btn.textContent = 'Send Message';
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 4000);
+      })
+      .catch(() => {
+        btn.textContent = 'Failed. Try Again ❌';
+        btn.style.background = '#ef4444';
+        btn.disabled = false;
+      });
+  });
+</script>
 </body>
 
 </html>
