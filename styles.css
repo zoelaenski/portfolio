@@ -1162,3 +1162,93 @@ footer {
   box-shadow: 0 0 35px rgba(37, 211, 102, 0.4);
   transform: translateY(-2px);
 }
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+@media (max-width: 768px) {
+
+  /* Hero */
+  #hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    gap: 3rem;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-img-wrapper {
+    width: 250px;
+    height: 250px;
+  }
+
+  /* What I Do & Services */
+  .cards-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Projects */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Bio */
+  .bio-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .bio-img-wrapper {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+  }
+
+  .bio-mission {
+    grid-template-columns: 1fr;
+  }
+
+  /* Timeline */
+  .timeline {
+    padding-left: 1.5rem;
+  }
+
+  /* Skills */
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Contact */
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  /* Page hero */
+  .page-hero-title {
+    font-size: 2.5rem;
+  }
+
+  /* Section title */
+  .section-title {
+    font-size: 2rem;
+  }
+
+  /* CTA strip */
+  .cta-strip-title {
+    font-size: 1.8rem;
+  }
+
+}
