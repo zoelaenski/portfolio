@@ -1252,3 +1252,20 @@ footer {
   }
 
 }
+
+.footer-socials {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.footer-socials a i {
+  font-size: 1.8rem;
+  color: var(--text-muted);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-socials a:hover i {
+  color: var(--accent-light);
+  transform: translateY(-3px);
+}

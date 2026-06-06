@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zoe Francis | Contact</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
@@ -136,51 +137,53 @@
 
     <footer>
         <a href="index.html" class="footer-logo">ZF</a>
-        <div class="footer-socials">
-            <a href="https://github.com/zoelaenski" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/zoe-oly-francis-b469733b6" target="_blank">LinkedIn</a>
-            <a href="https://x.com/zoelaenskai_" target="_blank">Twitter</a>
-            <a href="mailto:abigailoluchi532@gmail.com">Email</a>
-        </div>
         <p class="footer-copy">© 2026 <span>Zoe Francis</span>. All rights reserved.</p>
+        <div class="footer-socials">
+            <a href="https://github.com/zoelaenski" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/zoe-oly-francis-b469733b6" target="_blank"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/zoelaenskai_" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="mailto:abigailoluchi532@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://t.me/zoelaenskii" target="_blank"><i class="fab fa-telegram"></i></a>
+        </div>
     </footer>
 
     <script src="script.js"></script>
     <script>
-  emailjs.init('2uN2Or3pENc2FpTu_');
+        emailjs.init('2uN2Or3pENc2FpTu_');
 
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
 
-    const btn = this.querySelector('button[type="submit"]');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
+            const btn = this.querySelector('button[type="submit"]');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
 
-    const templateParams = {
-      from_name: document.getElementById('name').value,
-      from_email: document.getElementById('email').value,
-      subject: document.getElementById('subject').value,
-      message: document.getElementById('message').value,
-    };
+            const templateParams = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+            };
 
-    emailjs.send('service_31glrki', 'template_iczcvr6', templateParams)
-      .then(() => {
-        btn.textContent = 'Message Sent! ✅';
-        btn.style.background = '#25d366';
-        this.reset();
-        setTimeout(() => {
-          btn.textContent = 'Send Message';
-          btn.style.background = '';
-          btn.disabled = false;
-        }, 4000);
-      })
-      .catch(() => {
-        btn.textContent = 'Failed. Try Again ❌';
-        btn.style.background = '#ef4444';
-        btn.disabled = false;
-      });
-  });
-</script>
+            emailjs.send('service_31glrki', 'template_iczcvr6', templateParams)
+                .then(() => {
+                    btn.textContent = 'Message Sent! ✅';
+                    btn.style.background = '#25d366';
+                    this.reset();
+                    setTimeout(() => {
+                        btn.textContent = 'Send Message';
+                        btn.style.background = '';
+                        btn.disabled = false;
+                    }, 4000);
+                })
+                .catch(() => {
+                    btn.textContent = 'Failed. Try Again ❌';
+                    btn.style.background = '#ef4444';
+                    btn.disabled = false;
+                });
+        });
+    </script>
 </body>
 
 </html>
